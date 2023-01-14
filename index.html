@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html>  
+<head>    
+<meta charset="utf-8">    
+<title>My page title</title>    
+<link rel="stylesheet" href="base.css">    
+<script>
+function init(){
+	var title =  get();
+	document.title = title;
+	document.getElementById("titleName").innerHTML = title;
+
+	var themeName = localStorage.getItem("themeName");
+	
+	document.body.className = themeName;
+	
+}
+
+function change(){
+	const themed = document.getElementsByClassName('themed');
+	for( let theme of themed )
+	{
+	theme.classList.toggle('theme1');
+	localStorage.setItem("themeName", document.body.className);
+	}
+}
+
+window.onload = function() {
+	var title =  get();
+	document.title = title;
+	document.getElementById("titleName").innerHTML = title;
+	
+}
+function save() {
+	var name = document.getElementById("user_name").value;
+	
+	localStorage.setItem("name", name);
+	get();
+}
+
+function get() {				
+	var html = localStorage.getItem("name");
+	list.innerHTML = html;
+	return html;
+}
+
+</script>  
+</head>  
+<body onload="init()" class="themed">    
+<header>      
+<h1 id="titleName">Header</h1>      
+<button onclick="change()" class="themedButton">Toggle Theme</button>    
+</header>    
+<nav>      
+<ul>        
+<li><a href="#">Home</a></li>        
+<li><a href="#">Our team</a></li>        
+<li><a href="#">Projects</a></li>        
+<li><a href="#">Contact</a></li>      
+</ul>      
+you name is :<span id="list" style="font-size:20px"></span> 
+<form>         
+<input type="text" name="user_name"  id="user_name"  placeholder="Enter your name!">         
+<button type="button" onclick="save()" >Apply!</button>       
+</form>     
+</nav>    
+<main>      
+<article>   
+<ul>
+    <li style="float:left">
+      <div class="deatil">
+         <p>Pardalote</p>
+         <p>Pardalote by fir0002 (CC-by-NC)</p>
+      </div>
+      <img src="http://www.outgrabe.net/bird00.jpg" width="160px" height="240px" alt=""/>
+    </li>
+
+
+  <li style="float:left">
+      <div class="deatil">
+         <p>Purple Swamp Hen</p>
+         <p>Purple swamp hen by Toby Hudson (CC-by-SA)</p>       
+      </div>
+      <img src="http://www.outgrabe.net/bird01.jpg" width="160px" height="240px" alt=""/>
+    </li>
+
+
+  <li style="float:left">
+      <div class="deatil">
+         <p>White-headed Stilt</p>
+         <p>White-headed Stilt by JJ Harrison (CC-by-SA)</p>         
+      </div>
+      <img src="http://www.outgrabe.net/bird02.jpg" width="160px" height="240px" alt=""/>
+    </li>
+	
+
+  <li style="float:left">
+      <div class="deatil">
+         <p>Inland Thornbill</p>
+         <p>Inland Thornbill by Peter Jacobs (CC-by-SA)</p>
+         
+      </div>
+      <img src="http://www.outgrabe.net/bird03.jpg" width="160px" height="240px" alt=""/>
+    </li>
+
+
+  <li style="float:left">
+      <div class="deatil">
+         <p>Rose Robin</p>
+         <p>Rose Robin by JJ Harrison (CC-by-SA)</p>
+			
+      </div>
+      <img src="http://www.outgrabe.net/bird04.jpg" width="160px" height="240px" alt=""/>
+    </li>
+
+
+  
+
+
+  </ul>    
+<h3 style="clear: both">Subsection</h3>
+<p>Donec ut librero sed accu vehicula ultricies a non tortor. Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aenean ut gravida lorem. Ut turpis felis, pulvinar a semper sed, adipiscing id dolor.</p>
+<p>Pelientesque auctor nisi id magna consequat sagittis. Curabitur dapibus, enim sit amet elit pharetra tincidunt feugiat nist imperdiet. Ut convallis libero in urna ultrices accumsan. Donec sed odio eros.</p>
+<h3>Another subsection</h3>
+<p>Donec viverra mi quis quam pulvinar at malesuada arcu rhoncus. Cum soclis natoque penatibus et manis dis parturient montes, nascetur ridiculus mus. In rutrum accumsan ultricies. Mauris vitae nisi at sem facilisis semper ac in est.</p>
+<p>Vivamus fermentum semper porta. Nunc diam velit, adipscing ut tristique vitae sagittis vel odio. Maecenas convallis ullamcorper ultricied. Curabitur ornare, ligula semper consectetur sagittis, nisi diam iaculis velit, is fringille sem nunc vet mi.</p>
+</article>      
+<aside>        
+<h2>Related</h2>        
+<ul>          
+<li><a href="#">Oh I do like to be beside the seaside</a></li>          
+<li><a href="#">Oh I do like to be beside the sea</a></li>          
+<li><a href="#">Although in the North of England</a></li>          
+<li><a href="#">It never stops raining</a></li>          
+<li><a href="#">Oh well...</a></li>        
+</ul>      
+</aside>    
+</main>    
+<footer>      
+<p>©Copyright 2050 by nobody. All rights reversed.</p>    
+</footer>  
+</body>
+</html>
